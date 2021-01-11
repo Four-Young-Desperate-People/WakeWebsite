@@ -1,4 +1,13 @@
-FROM amazon/aws-cli
-RUN curl -sL https://rpm.nodesource.com/setup_14.x | bash -
-RUN yum install -y nodejs
-ENTRYPOINT /bin/bash
+FROM ubuntu:18.04
+RUN echo "hello"
+RUN apt-get update -y \
+    && apt-get install curl zip -y \
+    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \ 
+    && curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh \
+    && chmod +x nodesource_setup.sh && ./nodesource_setup.sh \
+    && apt-get install nodejs -y \
+    && unzip awscliv2.zip \
+    && ./aws/install \
+    && apt-get remove curl zip -y \
+    && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT aws s3 ls
