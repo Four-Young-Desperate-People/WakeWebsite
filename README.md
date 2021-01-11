@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## CI
 
-A Github action is setup to always upload the latest version of main to http://wakemirror.s3-website-us-east-1.amazonaws.com/home. If this does not work, please yell at Dom.
+A Github action is set up to always upload the latest version of main to http://wakemirror.s3-website-us-east-1.amazonaws.com. If this does not work, please yell at Dom.
