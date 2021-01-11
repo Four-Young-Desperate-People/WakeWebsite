@@ -1,0 +1,19 @@
+name: UpdateSite
+on:
+  push:
+    branches:
+      - setUpAutomation
+
+jobs:
+  updateSite:
+    runs-on: [ubuntu-latest]
+    container: public.ecr.aws/d9b2u6m1/awsupload
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Upload
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1
+        run: ./upload.sh  
