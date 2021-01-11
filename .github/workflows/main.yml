@@ -2,7 +2,7 @@ name: UpdateSite
 on:
   push:
     branches:
-      - setUpAutomation
+      - main
 
 jobs:
   updateSite:
