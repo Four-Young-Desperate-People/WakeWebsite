@@ -2,6 +2,7 @@ name: dev
 on:
   push:
     branches:
+      - '*'
       - !main
 
 jobs:
