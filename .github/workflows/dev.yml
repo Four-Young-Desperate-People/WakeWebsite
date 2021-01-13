@@ -5,7 +5,7 @@ on:
       - !main
 
 jobs:
-  updateDev:
+  dev:
     runs-on: [ubuntu-latest]
     container: public.ecr.aws/d9b2u6m1/awsupload
     steps:
