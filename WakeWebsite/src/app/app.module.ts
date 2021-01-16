@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { LogbookComponent } from './logbook/logbook.component';
+import { BlogComponent } from './blog/blog.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { NavbarCustomComponent } from './navbar-custom/navbar-custom.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppComponent,
     HomeComponent,
     AboutUsComponent,
-    LogbookComponent,
+    BlogComponent,
     ErrorPageComponent,
     NavbarCustomComponent,
     BlogPostFirstWeekComponent
