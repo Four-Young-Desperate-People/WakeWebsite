@@ -12,4 +12,11 @@ export class LogbookComponent implements OnInit {
   ngOnInit(): void {
   }
 
+    foo(): void {
+        console.log('IT WORKED HOLY SHIT');
+    }
+
+    navigateTo(number: number): void {
+
+    }
 }

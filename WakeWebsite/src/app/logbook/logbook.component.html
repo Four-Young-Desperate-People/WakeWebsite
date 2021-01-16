@@ -1,7 +1,38 @@
 <app-navbar-custom></app-navbar-custom>
-<div>
-    <h1>Week 1</h1>
-    <ul>
-        <li>(01/13/2021): finished skeleton for website with prod and dev versions for different git branches</li>
-    </ul>
+<div class="col align-content-between">
+    <div class="row justify-content-center">
+        <div  class="col-12  col-sm-10 col-md-8 col-lg-6  col-xl-6">
+            <mat-card routerLink="/blog-post-1" class="blog-card" style="cursor: pointer">
+                <mat-card-header>
+                    <mat-card-title>Website Creation</mat-card-title>
+                    <mat-card-subtitle>January 13, 2021</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="assets/AngularLogo.jpeg" alt="Angular">
+                <mat-card-content>
+                    <p>
+                        Created website with angular and hosted on AWS S3
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-center">
+        <div class="col-12  col-sm-10 col-md-8 col-lg-6  col-xl-6">
+            <mat-card routerLink="/blog-post-1" class="blog-card" style="cursor: pointer">
+                <mat-card-header>
+                    <mat-card-title>Tim Burring</mat-card-title>
+                    <mat-card-subtitle>January 18, 2021</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="assets/TimHeadshot.png" alt="Angular" >
+                <mat-card-content>
+                    <p>
+                        Tim go burrrr
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <!--        <li>(01/13/2021): finished skeleton for website with prod and dev versions for different git branches</li>-->
+    </div>
 </div>
