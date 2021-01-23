@@ -4,14 +4,16 @@ import {HomeComponent} from './home/home.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {BlogComponent} from './blog/blog.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
-import {BlogPostFirstWeekComponent} from './blog-posts/blog-post-first-week/blog-post-first-week.component';
+import {BlogPostOneComponent} from './blog-posts/blog-post-one/blog-post-one.component';
+import {BlogPostTwoComponent} from './blog-posts/blog-post-two/blog-post-two.component';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
     {path: 'home', component: HomeComponent},
     {path: 'about-us', component: AboutUsComponent},
     {path: 'blog', component: BlogComponent},
-    {path: 'blog-post-1', component: BlogPostFirstWeekComponent},
+    {path: 'blog-post-1', component: BlogPostOneComponent},
+    {path: 'blog-post-2', component: BlogPostTwoComponent},
     {path: '**', pathMatch: 'full', component: ErrorPageComponent}
 ];
 
