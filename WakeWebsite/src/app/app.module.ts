@@ -11,6 +11,7 @@ import {NavbarCustomComponent} from './navbar-custom/navbar-custom.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BlogPostOneComponent} from './blog-posts/blog-post-one/blog-post-one.component';
 import {BlogPostTwoComponent} from './blog-posts/blog-post-two/blog-post-two.component';
+import {BlogPostThreeComponent} from './blog-posts/blog-post-three/blog-post-three.component';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -23,7 +24,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         ErrorPageComponent,
         NavbarCustomComponent,
         BlogPostOneComponent,
-        BlogPostTwoComponent
+        BlogPostTwoComponent,
+        BlogPostThreeComponent
     ],
     imports: [
         BrowserModule,
