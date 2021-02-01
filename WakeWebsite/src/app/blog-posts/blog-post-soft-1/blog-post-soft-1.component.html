@@ -8,16 +8,19 @@
             </mat-card-header>
             <mat-card-content>
                 <div class="figure-image-container">
-                    <img class="figure-image" src="../../../assets/blog-soft-1/programmers_during_quarantine.png" alt="programmers during quarantine meme"  style="width: 50%">
+                    <img class="figure-image" src="../../../assets/blog-soft-1/programmers_during_quarantine.png"
+                         alt="programmers during quarantine meme" style="width: 50%">
                 </div>
                 <figcaption class="figure-caption-custom">Figure 1: sadge</figcaption>
                 <p class="blog-content">
-                    Things are a bit more straightforward on the software end. Here’s what happened over the Christmas break.
+                    Things are a bit more straightforward on the software end. Here’s what happened over the Christmas
+                    break.
                 </p>
 
                 <mat-card-subtitle class="blog-content-subtitle">Magic Mirror Frontend</mat-card-subtitle>
                 <div class="figure-image-container">
-                    <img class="figure-image" src="../../../assets/blog-soft-1/Virtualbox_logo.png" alt="virtual box logo" style="width: 50%">
+                    <img class="figure-image" src="../../../assets/blog-soft-1/Virtualbox_logo.png"
+                         alt="virtual box logo" style="width: 50%">
                 </div>
                 <figcaption class="figure-caption-custom">Figure 2: Virtual Box</figcaption>
 
@@ -31,7 +34,8 @@
                 </p>
 
                 <div class="figure-image-container">
-                    <img class="figure-image" src="../../../assets/blog-soft-1/node_js.png" alt="NodeJS logo" style="width: 50%">
+                    <img class="figure-image" src="../../../assets/blog-soft-1/node_js.png" alt="NodeJS logo"
+                         style="width: 50%">
                 </div>
                 <figcaption class="figure-caption-custom">Figure 3: NodeJS</figcaption>
                 <p class="blog-content">
@@ -44,7 +48,8 @@
                     There are a set of base modules that come with the project which we will be making use of:
                 </p>
                 <div class="figure-image-container">
-                    <img class="figure-image" src="../../../assets/blog-soft-1/magicMirror.png" alt="magic mirror base modules" style="width: 100%">
+                    <img class="figure-image" src="../../../assets/blog-soft-1/magicMirror.png"
+                         alt="magic mirror base modules" style="width: 100%">
                 </div>
                 <figcaption class="figure-caption-custom">Figure 4: Magic Mirror Base Modules</figcaption>
                 <ol class="blog-content">
@@ -56,33 +61,41 @@
                     <li>Calendar (top left)</li>
                 </ol>
                 <p class="blog-content">
-                    The Compliments module has a list of compliment phrases which it randomly cycles through and displays
+                    The Compliments module has a list of compliment phrases which it randomly cycles through and
+                    displays
                     on the screen. This is useful as this module essentially is a timed text display which will help us
                     understand how to show any text on the screen and update it periodically.
                 </p>
                 <p class="blog-content">
-                    Next, the Clock module simply shows the current time in either analog or digital form depending on the
+                    Next, the Clock module simply shows the current time in either analog or digital form depending on
+                    the
                     configuration setting.
                 </p>
                 <p class="blog-content">
-                    The CurrentWeather and WeatherForcast modules are similar in that they required us to get and provide
+                    The CurrentWeather and WeatherForcast modules are similar in that they required us to get and
+                    provide
                     an API key for a weather API to work. At the MagicMirror2 documentation’s recommendation we decided
                     to use the
-                    <a href="https://openweathermap.org/find" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a>
+                    <a href="https://openweathermap.org/find" target="_blank"
+                       rel="noopener noreferrer">OpenWeatherMap</a>
                     API. This just required us to create an account and wait a few hours for verification before we got
                     our API key. Once the key was validated, it worked on the first try without any hitches which was a
                     pleasant surprise. The CurrentWeather module displays the current weather while the WeatherForcast
                     (as the name suggests) gives a forecast for the next few days.
                 </p>
                 <p class="blog-content">
-                    The NewsFeed module is pretty interesting since it can be quite open-ended. You give it a news site’s
-                    page and it goes through the stories on that page and display’s their headlines. Currently, by default,
+                    The NewsFeed module is pretty interesting since it can be quite open-ended. You give it a news
+                    site’s
+                    page and it goes through the stories on that page and display’s their headlines. Currently, by
+                    default,
                     it is set to the NewYork Times homepage.
 
                 </p>
                 <p class="blog-content">
-                    Finally, the Calendar module should display a calendar with your custom events on it but it isn’t working
-                    as expected. This is likely because we left the configuration for this module blank, assuming the defaults
+                    Finally, the Calendar module should display a calendar with your custom events on it but it isn’t
+                    working
+                    as expected. This is likely because we left the configuration for this module blank, assuming the
+                    defaults
                     would kick in but that doesn’t seem to be the case. We will look further into how to configure this
                     module properly in the future.
                 </p>
@@ -91,83 +104,94 @@
                 <mat-card-subtitle class="blog-content-subtitle">Raspberry Pi Core</mat-card-subtitle>
                 <p class="blog-content">
                     First, openCV was installed using a
-                    <a href="https://learnopencv.com/install-opencv-4-on-ubuntu-18-04/" target="_blank" rel="noopener noreferrer">tutorial found online</a>
-                    , both on the raspberry pi and the development environment. After it was installed, an open source heartbeat
+                    <a href="https://learnopencv.com/install-opencv-4-on-ubuntu-18-04/" target="_blank"
+                       rel="noopener noreferrer">tutorial found online</a>
+                    , both on the raspberry pi and the development environment. After it was installed, an open source
+                    heartbeat
                     detection project was pulled from
                     <a href="https://github.com/prouast/heartbeat" target="_blank" rel="noopener noreferrer">github</a>
-                     and compiled. The project implements the rRPG, or "remote Photoplethysmography". It is basically the
-                    process of detecting the frequency of skin tone change over time to determine a pulse. After everything
+                    and compiled. The project implements the rRPG, or "remote Photoplethysmography". It is basically the
+                    process of detecting the frequency of skin tone change over time to determine a pulse. After
+                    everything
                     was installed and built, this was an example of it working in real time.
                 </p>
                 <div class="embed-responsive embed-responsive-21by9">
                     <iframe class="embed-responsive-item" src="../../../assets/blog-soft-1/HR_test_1.mp4"></iframe>
                 </div>
                 <p class="blog-content">
-                    The device on the left is a Pulse Oximeter, and the number on the bottom is my pulse that it is detecting.
-                    The pulse the Oximeter is detecting and the openCV program are really close, and thus more than acceptable
+                    The device on the left is a Pulse Oximeter, and the number on the bottom is my pulse that it is
+                    detecting.
+                    The pulse the Oximeter is detecting and the openCV program are really close, and thus more than
+                    acceptable
                     for our project.
                 </p>
                 <p class="blog-content">
-                    ROS, or Robotic Operating System, is a publisher/subscriber system designed for robots. The ROS system
-                    will be used to allow the 3 main components of the project, meaning the frontend, Pi, and android App,
+                    ROS, or Robotic Operating System, is a publisher/subscriber system designed for robots. The ROS
+                    system
+                    will be used to allow the 3 main components of the project, meaning the frontend, Pi, and android
+                    App,
                     to communicate with each other. The following tutorial was used to install
                     <a href="http://wiki.ros.org/melodic/Installation/Ubuntu" target="_blank" rel="noopener noreferrer">ROS</a>
                     on the raspberry pi. A few tutorials were ran to verify that the ROS systems worked on the Pi, such
                     as the
-                    <a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics" target="_blank" rel="noopener noreferrer">turtilism program</a>
+                    <a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics" target="_blank"
+                       rel="noopener noreferrer">turtilism program</a>
                     , and creating a sample pub/sub system in cpp using another
-                    <a href="http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29" target="_blank" rel="noopener noreferrer">tutorial found online</a>
-                    . Now, from the pi point of view, we need to integrate ROS with the openCV code, in order to send the
+                    <a href="http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29" target="_blank"
+                       rel="noopener noreferrer">tutorial found online</a>
+                    . Now, from the pi point of view, we need to integrate ROS with the openCV code, in order to send
+                    the
                     current heart rate to a ROS topic, and to know when is a good time actually start taking heart rate.
                 </p>
 
 
                 <mat-card-subtitle class="blog-content-subtitle">Android App Development</mat-card-subtitle>
                 <p class="blog-content">
-                    We started off by having Android Studio generate a bottom navigation activity. We then added some icons
+                    We started off by having Android Studio generate a bottom navigation activity. We then added some
+                    icons
                     and some default buttons such that it currently looks like this.
                 </p>
-                <!--FIXME: before it reaches xsmall or small and rowraps it makes everything tiny for some reason-->
+
                 <div class="row justify-content-center">
-                        <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
-                            <div class="figure-image-container">
-                                <img class="figure-image" src="../../../assets/blog-soft-1/alarm_screen_light.png"
-                                     alt="android app alarm screen (light)" style="width: 100%">
-                            </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="figure-image-container">
+                            <img class="figure-image" src="../../../assets/blog-soft-1/alarm_screen_light.png"
+                                 alt="android app alarm screen (light)" style="width: 100%">
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
-                            <div class="figure-image-container">
-                                <img class="figure-image"
-                                     src="../../../assets/blog-soft-1/smart_mirror_screen_light.png"
-                                     alt="android app smart mirror screen (light)" style="width: 100%">
-                            </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="figure-image-container">
+                            <img class="figure-image"
+                                 src="../../../assets/blog-soft-1/smart_mirror_screen_light.png"
+                                 alt="android app smart mirror screen (light)" style="width: 100%">
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
-                            <div class="figure-image-container">
-                                <img class="figure-image" src="../../../assets/blog-soft-1/settings_screen_light.png"
-                                     alt="android app settings screen (light)" style="width: 100%">
-                            </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="figure-image-container">
+                            <img class="figure-image" src="../../../assets/blog-soft-1/settings_screen_light.png"
+                                 alt="android app settings screen (light)" style="width: 100%">
                         </div>
+                    </div>
                 </div>
                 <p class="blog-content">
                     With the imported Material theme, the app is also dark mode compatible:
                 </p>
-                <!--FIXME: before it reaches xsmall or small and rowraps it makes everything tiny for some reason-->
+
                 <div class="row justify-content-center">
-                    <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="figure-image-container">
                             <img class="figure-image" src="../../../assets/blog-soft-1/alarm_screen_dark.png"
                                  alt="android app alarm screen (dark)" style="width: 100%">
                         </div>
                     </div>
-                    <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="figure-image-container">
                             <img class="figure-image"
                                  src="../../../assets/blog-soft-1/smart_mirror_screen_dark.png"
                                  alt="android app smart mirror screen (dark)" style="width: 100%">
                         </div>
                     </div>
-                    <div class="col-sm-1 col-md-1 col-lg-3 col-xl-3">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="figure-image-container">
                             <img class="figure-image" src="../../../assets/blog-soft-1/settings_screen_dark.png"
                                  alt="android app settings screen (dark)" style="width: 100%">
@@ -176,14 +200,22 @@
                 </div>
                 <p class="blog-content">
                     As seen in the alarm page, a quick alarm button is shown and a play music button is shown. These are
-                    more for debugging and will be removed in the final product. So far, the quick alarm plays a ringtone
-                    and opens the alarm screen. More testing needs to be done to ensure that this alarm screen shows even
+                    more for debugging and will be removed in the final product. So far, the quick alarm plays a
+                    ringtone
+                    and opens the alarm screen. More testing needs to be done to ensure that this alarm screen shows
+                    even
                     if the application goes off.
                 </p>
-                <div class="figure-image-container">
-                    <img class="figure-image" src="../../../assets/blog-soft-1/alarm_going_off.png" alt="Alarm triggered screen" style="width: 20%">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div class="figure-image-container">
+                            <img class="figure-image" src="../../../assets/blog-soft-1/alarm_going_off.png"
+                                 alt="Alarm triggered screen" style="width: 100%">
+                        </div>
+                        <figcaption class="figure-caption-custom">Figure 3: Alarm being triggered</figcaption>
+                    </div>
                 </div>
-                <figcaption class="figure-caption-custom">Figure 3: Alarm being triggered</figcaption>
+
 
             </mat-card-content>
         </mat-card>
