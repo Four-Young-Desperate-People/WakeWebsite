@@ -24,7 +24,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: rgb(210,210,210);
 }
 
-.figure-image {
+.figure-image-container {
     text-align: center;
     margin-top: 24px !important;
+}
+
+.figure-image {
+    height: auto;
 }
