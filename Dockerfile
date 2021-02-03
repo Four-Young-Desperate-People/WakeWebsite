@@ -6,7 +6,7 @@ RUN apt-get update -y \
     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \ 
     && curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh \
     && chmod +x nodesource_setup.sh && ./nodesource_setup.sh \
-    && apt-get install nodejs -y \
+    && apt-get install nodejs git-lfs -y \
     && npm install -g @angular/cli \
     && unzip awscliv2.zip \
     && ./aws/install \
