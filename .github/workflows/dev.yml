@@ -10,7 +10,9 @@ jobs:
     container: public.ecr.aws/d9b2u6m1/awsupload
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          lfs: true
       - name: Build
         run: ./build.sh
       - name: Upload
