@@ -15,6 +15,7 @@ import {BlogPostMech3Component} from './blog-posts/blog-post-mech-3/blog-post-me
 import {BlogPostSoft1Component} from './blog-posts/blog-post-soft-1/blog-post-soft-1.component';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {BlogPostMech4Component} from './blog-posts/blog-post-mech-4/blog-post-mech-4.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         BlogPostMech1Component,
         BlogPostMech2Component,
         BlogPostMech3Component,
+        BlogPostMech4Component,
         BlogPostSoft1Component
     ],
     imports: [
