@@ -1,0 +1,104 @@
+<app-navbar-custom></app-navbar-custom>
+<div class="row justify-content-center w-100">
+    <div class="col-8">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Communication Between Project Components</mat-card-title>
+                <mat-card-subtitle>Part 2: ROS Betrayed us, Websockets Come to the Rescue – February 17, 2021 Software Team</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-soft-4/meme.png" alt="change my mind meme" style="width: 50%">
+                </div>
+                <p class="blog-content">
+                    Because the world is cruel, after weeks of development with ROS we encountered a problem that destroyed
+                    all that work. It turns out that ROS topics don’t ensure integrity with messages. This means that sometimes
+                    consumers subscribed to a topic will not receive a message sent along it. This is a really big problem
+                    since we rely on message integrity to ensure proper communication between the parts of our project.
+                </p>
+                <p class="blog-content">
+                    The only solutions we could think of were:
+                </p>
+                <ol>
+                    <li>Troubleshooting to try get it to work</li>
+                    <li>Using ROS Services instead of ROS Topics</li>
+                    <li>Flooding a topic with multiple of the same message</li>
+                    <li>Having all consumers acknowledging all messages so producers keep sending messages until ACK is received</li>
+                    <li>Switch to websockets</li>
+                </ol>
+
+                <p class="blog-content">
+                    Believe it or not, troubleshooting was attempted, for a while, like 5 hours. After seeing that it was
+                    going nowhere, we decided that even if it did end up working, it would likely take too much time and
+                    so we abandoned option 1. Option 2 entailed using a different ROS feature and modifying our code heavily
+                    to work for it with no guarantee that Services would not have the same issue. Option 3 and 4 probably
+                    could have worked but kind of defeat the point of fast reliable communication through ROS and so were
+                    not pursued either. In the end, the only option that remained was to use websockets instead.
+                </p>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-soft-4/websockets.png" alt="web sockets python image" style="width: 50%">
+                </div>
+
+                <mat-card-subtitle class="blog-content-subtitle">Frontend Changes</mat-card-subtitle>
+                <p class="blog-content">
+                    First the mocks had to be redone. Initially each topic producer was mocked in a separate script since
+                    it worked well with the fact that we were using many different topics for each responsibility. With
+                    websockets however, it made more sense to just use one socket per node, and specify the responsibility
+                    in part of the JSON message being passed. The data sent through the websockets were modified to look
+                    like:
+                </p>
+                <div class="figure-image-container-code-left-aligned">
+                    <img src="../../../assets/blog-soft-4/websocket-json.png" alt="web sockets json message format" style="width: 20%; margin-left: 16px">
+                </div>
+
+                <p class="blog-content">
+                    where the method was the previous ROS topic, and the data field was replaced with the expected data
+                    from the previously made ROS topics. With this implementation, it made more sense to have one script
+                    mock all possible messages instead of a separate script for each type of message as done for the ROS
+                    implementation. A single script was made to test each functionality, as well as run through a sample
+                    happy path for the frontend.
+                </p>
+                <p class="blog-content">
+                    Next, the changes had to be applied to the magic mirror frontend. The “Controller” module’s node_helper
+                    script was configured to listen on a single web socket for JSON messages that indicated what needed
+                    to be done. The controller then configured which modules to display and where and then internally passed
+                    a notification to specific modules telling them what content needs to be displayed. This is actually
+                    cleaner than how it was done with ROS as we no longer have more than one module listening on the same
+                    topic/socket.
+                </p>
+                <mat-card-subtitle class="blog-content-subtitle">Pi Core Changes</mat-card-subtitle>
+                <p class="blog-content">
+                    Similarly to the Frontend, the Pi Core had to change all of its mocks to use websockets instead. The
+                    <a href="https://github.com/gorilla/websocket" target="_blank" rel="noopener noreferrer">gorilla websocket library</a>
+                    was used for all of the golang websockets. Unlike the previous ROS system, where the ROS nodes acted
+                    as the server, the Go scripts will need to act as the server from now on. Different paths will be used
+                    to differentiate a connection from the frontend and the android app, e.g. "localhost/frontend" and
+                    "localhost/android". As previously stated, the data flowing through the websockets had to be changed
+                    into the generic JSON format.
+                </p>
+
+                <p class="blog-content">
+                    The Manager and LED nodes needed to be consolidated into 1 script instead of the 2 processes it was
+                    previously. The manager simply calls the LED portion as a goroutine when it starts, allowing them to
+                    run concurrently. Goroutine can be thought of
+                    <a href="https://gobyexample.com/goroutines" target="_blank" rel="noopener noreferrer">lightweight thread</a>
+                    managed by the Go runtime environment. Instead of having the two goroutines communicate with websockets,
+                    the goroutines communicate internally via Go channels.
+                </p>
+
+                <p class="blog-content">
+                    The OpenCV node required the most changes. Websockets were a little more challenging to add to the C
+                    code. Instead, a new goroutine was created that would communicate with the Manager via a Channel. The
+                    goroutine would start the OpenCV heart rate process when it receives a "alarm_start" from its channel,
+                    and attach a scanner to the process's stdout. The output of the heart rate process needed to be modified
+                    to only spit out "calibrating" and a number, showing the users heart rate. When the scanner reads the
+                    heartate, it will pass the number through the channel, and then the frontend websocket will relay the
+                    heart rate through the display_heartrate method. When the "stop_alarm" method is passed through the
+                    channel, it will stop the heart rate process.
+                </p>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+

@@ -13,7 +13,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .blog-content-subtitle {
     padding-top: 28px !important;
-    margin-left: 18px !important;
+    margin-left: 16px !important;
     font-size: 24px;
 }
 
@@ -27,6 +27,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .figure-image-container {
     text-align: center;
     margin-top: 24px !important;
+}
+.figure-image-container-code-left-aligned {
+    margin-bottom: 12px;
 }
 
 .figure-image {

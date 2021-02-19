@@ -16,6 +16,10 @@ import {BlogPostSoft1Component} from './blog-posts/blog-post-soft-1/blog-post-so
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BlogPostMech4Component} from './blog-posts/blog-post-mech-4/blog-post-mech-4.component';
+import {BlogPostMech5Component} from './blog-posts/blog-post-mech-5/blog-post-mech-5.component';
+import {BlogPostMech6Component} from './blog-posts/blog-post-mech-6/blog-post-mech-6.component';
+import {BlogPostSoft2Component} from './blog-posts/blog-post-soft-2/blog-post-soft-2.component';
+import {BlogPostSoft4Component} from './blog-posts/blog-post-soft-4/blog-post-soft-4.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +33,11 @@ import {BlogPostMech4Component} from './blog-posts/blog-post-mech-4/blog-post-me
         BlogPostMech2Component,
         BlogPostMech3Component,
         BlogPostMech4Component,
-        BlogPostSoft1Component
+        BlogPostMech5Component,
+        BlogPostMech6Component,
+        BlogPostSoft1Component,
+        BlogPostSoft2Component,
+        BlogPostSoft4Component,
     ],
     imports: [
         BrowserModule,
