@@ -1,0 +1,133 @@
+<app-navbar-custom></app-navbar-custom>
+<div class="row justify-content-center w-100">
+    <div class="col-8">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Communication Between Project Components</mat-card-title>
+                <mat-card-subtitle>Part 1: ROS in all its glory – January 26, 2021 Software Team</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-soft-2/ros-instructables.jpg" alt="ROS Instructables" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 1: ROS</figcaption>
+                <p class="blog-content">
+                    We decided to use ROS for communication between modules. This entailed communication between the android
+                    and the pi, the android and the frontend, and the pi and the frontend.
+                </p>
+
+                <mat-card-subtitle class="blog-content-subtitle">ROS Topics</mat-card-subtitle>
+
+                <p class="blog-content">
+                    The following topics were planned, along side they're expected data types to be sent and received by both parties
+                </p>
+                <ul>
+                    <li>/alarm_start</li>
+                    <ul>
+                        <li>Android to Pi</li>
+                        <li>JSON</li>
+                        <div class="figure-image-container-list-item">
+                            <img src="../../../assets/blog-soft-2/alam_start_json.png" alt="alarm start json" style="width: 20%">
+                        </div>
+                    </ul>
+
+                    <li>/display_exercise</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>String</li>
+                    </ul>
+
+                    <li>/quite_alarm</li>
+                    <ul>
+                        <li>Pi to Android</li>
+                        <li>Bool</li>
+                    </ul>
+
+                    <li>/display_text</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>String</li>
+                    </ul>
+
+                    <li>/start_displaying_heartrate</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>Int</li>
+                    </ul>
+
+                    <li>/display_heartrate</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>Int</li>
+                    </ul>
+
+                    <li>/stop_alarm</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>None</li>
+                    </ul>
+
+                    <li>/update_modules</li>
+                    <ul>
+                        <li>Android to Pi</li>
+                        <li>JSON</li>
+                        <div class="figure-image-container-list-item">
+                            <img src="../../../assets/blog-soft-2/update_modules_json.png" alt="alarm start json" style="width: 40%">
+                        </div>
+                    </ul>
+
+                    <li>/update_modules</li>
+                    <ul>
+                        <li>Pi to Frontend</li>
+                        <li>JSON</li>
+                        <div class="figure-image-container-list-item">
+                            <img src="../../../assets/blog-soft-2/update_modules_json.png" alt="alarm start json" style="width: 40%">
+                        </div>
+                    </ul>
+
+                    <li>/ping</li>
+                    <ul>
+                        <li>Android to Pi</li>
+                        <li>Int</li>
+                    </ul>
+
+                    <li>/pong</li>
+                    <ul>
+                        <li>Pi to Android</li>
+                        <li>Int</li>
+                    </ul>
+                </ul>
+
+                <mat-card-subtitle class="blog-content-subtitle">Implementations</mat-card-subtitle>
+
+                <p class="blog-content">
+                    In the Magic Mirror we had to create modules that are hooked onto ROS topics and respond to messages.
+                    This was accomplished using the node_helper javascript file that can accompany any module. A single
+                    module called “Controller” was created for module manipulation. This module was hooked onto several
+                    ROS topics and would move and set the visibility for all other modules appropriately. In addition each
+                    custom module would listen to a ROS topic to determine what content it should display. For example,
+                    there is a GIF module which can display GIFs; the specific GIF is supplied through the ROS topic it
+                    subscribes to.
+                </p>
+
+                <p class="blog-content">
+                    For the Pi Core, 3 different separate ros nodes were used. The Manager and LED nodes, made in Go, and
+                    the OpenCV Node, written in C. The Manager was responsible for communicating and coordinating the rest
+                    of the systems when the "alarm_start" topic was talked to. The beauty of ROS is that it allows all of
+                    these interlanguage processes to communicate seamlessly.
+                </p>
+
+                <mat-card-subtitle class="blog-content-subtitle">Mocking</mat-card-subtitle>
+
+                <p class="blog-content">
+                    Based on the workflow and happy path, all possible messages to the frontend through ROS were mocked.
+                    The Frontend system used Python Scripts mocks to produce these messages, while the ROS core team used
+                    Go for mock producers and consumers. This was done in order to test all the functionality independently
+                    of the other components of the project. Since we are all working separately, we need to make sure each
+                    part will work with the others.
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
