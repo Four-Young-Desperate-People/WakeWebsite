@@ -19,6 +19,7 @@ import {BlogPostMech4Component} from './blog-posts/blog-post-mech-4/blog-post-me
 import {BlogPostMech5Component} from './blog-posts/blog-post-mech-5/blog-post-mech-5.component';
 import {BlogPostMech6Component} from './blog-posts/blog-post-mech-6/blog-post-mech-6.component';
 import {BlogPostSoft2Component} from './blog-posts/blog-post-soft-2/blog-post-soft-2.component';
+import {BlogPostSoft4Component} from './blog-posts/blog-post-soft-4/blog-post-soft-4.component';
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import {BlogPostSoft2Component} from './blog-posts/blog-post-soft-2/blog-post-so
         BlogPostMech6Component,
         BlogPostSoft1Component,
         BlogPostSoft2Component,
+        BlogPostSoft4Component,
     ],
     imports: [
         BrowserModule,
