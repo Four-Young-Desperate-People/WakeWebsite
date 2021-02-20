@@ -15,6 +15,7 @@ import {BlogPostSoft2Component} from './blog-posts/blog-post-soft-2/blog-post-so
 import {BlogPostSoft4Component} from './blog-posts/blog-post-soft-4/blog-post-soft-4.component';
 import {BlogPostMech7Component} from './blog-posts/blog-post-mech-7/blog-post-mech-7.component';
 import {BlogPostMech8Component} from './blog-posts/blog-post-mech-8/blog-post-mech-8.component';
+import {BlogPostMech9Component} from './blog-posts/blog-post-mech-9/blog-post-mech-9.component';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -29,6 +30,10 @@ const routes: Routes = [
     {path: 'blog-post-mech-6', component: BlogPostMech6Component},
     {path: 'blog-post-mech-7', component: BlogPostMech7Component},
     {path: 'blog-post-mech-8', component: BlogPostMech8Component},
+
+    // TODO: uncomment on/after Feb 21
+    // {path: 'blog-post-mech-9', component: BlogPostMech9Component},
+
     {path: 'blog-post-soft-1', component: BlogPostSoft1Component},
     {path: 'blog-post-soft-2', component: BlogPostSoft2Component},
     {path: 'blog-post-soft-4', component: BlogPostSoft4Component},
