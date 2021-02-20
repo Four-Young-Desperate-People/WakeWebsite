@@ -16,6 +16,7 @@ import {BlogPostSoft4Component} from './blog-posts/blog-post-soft-4/blog-post-so
 import {BlogPostMech7Component} from './blog-posts/blog-post-mech-7/blog-post-mech-7.component';
 import {BlogPostMech8Component} from './blog-posts/blog-post-mech-8/blog-post-mech-8.component';
 import {BlogPostMech9Component} from './blog-posts/blog-post-mech-9/blog-post-mech-9.component';
+import {BlogPostMech10Component} from './blog-posts/blog-post-mech-10/blog-post-mech-10.component';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -33,6 +34,9 @@ const routes: Routes = [
 
     // TODO: uncomment on/after Feb 21
     // {path: 'blog-post-mech-9', component: BlogPostMech9Component},
+
+    // TODO: uncomment on/after Feb 27
+    // {path: 'blog-post-mech-10', component: BlogPostMech10Component},
 
     {path: 'blog-post-soft-1', component: BlogPostSoft1Component},
     {path: 'blog-post-soft-2', component: BlogPostSoft2Component},

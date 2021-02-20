@@ -23,6 +23,7 @@ import {BlogPostSoft4Component} from './blog-posts/blog-post-soft-4/blog-post-so
 import {BlogPostMech7Component} from './blog-posts/blog-post-mech-7/blog-post-mech-7.component';
 import {BlogPostMech8Component} from './blog-posts/blog-post-mech-8/blog-post-mech-8.component';
 import {BlogPostMech9Component} from './blog-posts/blog-post-mech-9/blog-post-mech-9.component';
+import {BlogPostMech10Component} from './blog-posts/blog-post-mech-10/blog-post-mech-10.component';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import {BlogPostMech9Component} from './blog-posts/blog-post-mech-9/blog-post-me
         BlogPostMech7Component,
         BlogPostMech8Component,
         BlogPostMech9Component,
+        BlogPostMech10Component,
         BlogPostSoft1Component,
         BlogPostSoft2Component,
         BlogPostSoft4Component,
