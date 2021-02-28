@@ -32,11 +32,8 @@ const routes: Routes = [
     {path: 'blog-post-mech-6', component: BlogPostMech6Component},
     {path: 'blog-post-mech-7', component: BlogPostMech7Component},
     {path: 'blog-post-mech-8', component: BlogPostMech8Component},
-
     {path: 'blog-post-mech-9', component: BlogPostMech9Component},
-
-    // TODO: uncomment on/after Feb 27
-    // {path: 'blog-post-mech-10', component: BlogPostMech10Component},
+    {path: 'blog-post-mech-10', component: BlogPostMech10Component},
 
     // TODO: uncomment on/after Mar 6
     // {path: 'blog-post-mech-11', component: BlogPostMech11Component},
