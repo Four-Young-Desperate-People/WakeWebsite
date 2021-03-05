@@ -1,0 +1,38 @@
+<app-navbar-custom></app-navbar-custom>
+<div class="row justify-content-center w-100">
+    <div class="col-8">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Communication Between Project Components</mat-card-title>
+                <mat-card-subtitle>Part 3: Websockets Implemented and Tested on Mirror Frontend – February 22, 2021 Software Team</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-soft-5/mirror_default_state.png" alt="mirror default state" style="width: 50%">
+                </div>
+                <p class="blog-content">
+                    The magic mirror frontend was modified to use Websockets instead of ROS as stated in the previous software
+                    blog. Once this was done we had to make sure all the modules worked and were responsive to requests
+                    coming in on the Websocket. Additionally, we had to test what a happy path of the alarm loop would look
+                    like to make sure it worked well.
+                </p>
+                <p class="blog-content">
+                    This was done by creating a Python script to mock all the possible requests that the mirror could get
+                    from the other components of the project. The video below shows the mirror being controlled by said
+                    Python script to test and demonstrate the mirror’s capabilities. In the video, the terminal on the left
+                    is the logs being outputted by the Python script and the terminal on the right shows the requests being
+                    received by the magic mirror frontend.
+                </p>
+                <div class="embed-responsive embed-responsive-21by9" style="padding: 12px">
+                    <iframe class="embed-responsive-item" src="../../../assets/blog-soft-5/MagicMirrorTestingDemo.mp4"></iframe>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
