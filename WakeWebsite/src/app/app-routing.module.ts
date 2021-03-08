@@ -35,9 +35,7 @@ const routes: Routes = [
     {path: 'blog-post-mech-8', component: BlogPostMech8Component},
     {path: 'blog-post-mech-9', component: BlogPostMech9Component},
     {path: 'blog-post-mech-10', component: BlogPostMech10Component},
-
-    // TODO: uncomment on/after Mar 6
-    // {path: 'blog-post-mech-11', component: BlogPostMech11Component},
+    {path: 'blog-post-mech-11', component: BlogPostMech11Component},
 
     {path: 'blog-post-soft-1', component: BlogPostSoft1Component},
     {path: 'blog-post-soft-2', component: BlogPostSoft2Component},
