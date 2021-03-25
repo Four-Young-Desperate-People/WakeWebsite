@@ -1,0 +1,99 @@
+<app-navbar-custom></app-navbar-custom>
+<div class="row justify-content-center w-100">
+    <div class="col-8">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>What does it take to make a WAKE?</mat-card-title>
+                <mat-card-subtitle>Part 10: Final Electrical wiring and CSA approval? – March 8, 2021 Fabrication Team</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/MissingFewElectricalComponents.png" alt="Missing a few Electrical Components" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 1: Missing a few Electrical Components</figcaption>
+                <p class="blog-content">
+                    With the mechanical components of the design complete, all that remained before testing out the WAKE
+                    system prototype was to finish adding in the missing electrical components. All of these components
+                    were related to the LED light sub-system of the mirror. In order to be able to control each of the colors
+                    of lights (Red, Green, Blue, and White) 4 NMOS transistor switches would need to be soldered onto the
+                    Pi’s Fan HAT. As well, wires to power the 12 VDC LED light strips and to connect the PWM signals to
+                    control each color of light would be required as well. The first step was to determine which of the
+                    header pins of the Pi could be used as a ground pin for the whole subsystem and for PWM control as shown
+                    in Figure 2 below. Unfortunately there are only 4 hardware PWM pins, grouped in pairs of two, shown
+                    in yellow in Figure 2. Instead, to control each color independently, it was decided that to use 4 of
+                    the GPIO pins that could provide software PWM for each color, as highlighted in light green in Figure 2.
+                </p>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/RaspberryPiHeaderPins.png" alt="Raspberry Pi Header Pins - Location and Use" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 2: Raspberry Pi Header Pins - Location and Use</figcaption>
+                <p class="blog-content">
+                    With this decision out of the way it became important to have a reasonable circuit diagram for how the
+                    circuit would be soldered to the Pi HAT. In Figure 3 below, one can notice the same color scheme of
+                    the Pi header pins from Figure 2 had been copied into place as reference. Next orange wires were used
+                    to represent power being supplied from the 12 VDC supply to the 2 LED Light strips that would be landed
+                    onto the HAT first. The neutral wire from the power supply, marked as black wires would then land at
+                    multiple places on the HAT, connecting the source of each NMOS transistor, and finally grounding the
+                    Pi as well.  This left the other two pins of each transistor to be soldered into place. All of the gate
+                    pins would be connected to the corresponding GPIO pins of the Pi Header, to allow software PWM to control
+                    their switching. Likewise, all of the drain pins would be connected to two wires that ran to each of
+                    the LED light strips respectively for each individual color.  As soldering would have to occur at both
+                    ends of the wires, that is the LED light strips already placed in the aluminum channel at the front
+                    of the mirror and to the Pi HAT placed in the back of the mirror, it was decided to use connectors that
+                    would allow for the quick disconnect of the separate parts of the subsystem should issues arise as shown
+                    in Figure 4.
+                </p>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDLightSubSystemCircuitDiagram.png" alt="LED Light Sub-System Circuit Diagram" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 3: LED Light Sub-System Circuit Diagram</figcaption>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDWireConnectors.jpg" alt="LED Wire Connectors" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 4: LED Wire Connectors</figcaption>
+                <p class="blog-content">
+                    With all these decisions made the electrical components of the LED light subsystem could be assembled.
+                    The first step was to set the Belker power supply to 12 VDC, followed by soldering the GPIO Header extension
+                    to the bottom of the HAT. Next, the electrical circuit on the Pi HAT was soldered into place, and can
+                    be seen in Figure 5. Finally, the LED light strips were cut down to 9 units per side and gently pressed
+                    into the aluminum channels once the 5 wires were soldered onto the starting unit of each side, as shown
+                    in Figure 6.
+                </p>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDPiHATCirctuit.png" alt="LED Pi HAT Circuit" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 5: LED Pi HAT Circuit</figcaption>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDLightStripUnitsInAluminumChannel.png" alt="LED Light Strip Units in Aluminum Channel" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 6: LED Light Strip Units in Aluminum Channel</figcaption>
+                <p class="blog-content">
+                    Unfortunately, during the first power on test, it was found that the 12 VDC power supply did not work and had to be replaced by a power supply that was on hand instead. Not only this, but because the LED light strips did not come with any technical information on the power rating nor the current draw, other major issues occurred during initial testing. Due to a purchasing error, the 4 NMOS transistors had a max drain current of 200 mA, instead of 500 mA that the system was conservatively designed. When the lights started remaining always on, even with the Pi disconnected, see Figure 7, some measurements were taken and it was confirmed that the current draw of the LED light strips was 270 mA per wire. Hence, all four of the NMOS transistors had been shorted. When an attempt was made to purchase the appropriate NMOS transistors from local stores, due to the pandemic, all supply was sold out. Instead, because it would take too long to resolder the original HAT, a custom board was cut. Then optocouplers were used to control the light intensity of the white lights of the LED strips only, with the RGB wires covered with electrical tape for the interim, as shown in Figure 8 and 9 respectively. Due to concerns about possible damage to the Raspberry Pi as well, partially from problems that had occurred in MTE 380 and partially out of pure caution, the group decided to purchase an additional Raspberry Pi and power supply to ensure that no issues would come up during further testing of the prototype.
+                </p>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDLightStripAlwaysOn.png" alt="LED Light Strip Always On" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 7: LED Light Strip Always On</figcaption>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/ReplacementLEDLightCircuitWithOctocouplers.png" alt="Replacement LED Light Circuit with Octocouplers" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 8: Replacement LED Light Circuit with Octocouplers</figcaption>
+                <div class="figure-image-container">
+                    <img src="../../../assets/blog-mech-12/LEDLightStripsWorkingProperly.png" alt="LED Light Strips Working Properly" style="width: 50%">
+                </div>
+                <figcaption class="figure-caption-custom">Figure 9: LED Light Strips Working Properly</figcaption>
+                <p class="blog-content">
+                    The final part of electrical work was to determine if this device would require CSA approval or not.
+                    This was done by following the form “How to get CSA Electrical Approval for Your Project” that can be
+                    found on the MME Health and Safety, forms and documents webpage. It was immediately clear that all of
+                    the purchased components (Raspberry Pi, HAT, Webcam, Monitor) would not require such approval as they
+                    already had met the required approval for usage. However, the LED light subsystem would fall under 2-7-29
+                    of the Ontario Electrical Safety Code. Now as the circuit’s power output was 12.96 W ((270 mA x 4) x 12 V),
+                    its peak voltage would be less than 42.4 VDC, and it’s connected to the load side of an approved class
+                    2 power supply (the Trond power bar is ETL approved) it would not require CSA approval.
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
